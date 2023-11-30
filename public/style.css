@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+.container {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+
+  border: 1px solid #0000007a;
+  border-radius: 10px;
+
+  width: 50vw;
+
+  margin: auto;
+  margin-top: 5%;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+
+  padding: 15px 32px;
+  margin: 4px 2px;
+
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+input[type=text],
+input[type=date] {
+  width: auto;
+
+  padding: 12px 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  display: inline-block;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+
+  margin: 8px 0;
+
+  text-align: center;
+}

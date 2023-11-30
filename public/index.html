@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Horoscope</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>GPT Guess Your Personality</h2>
+    <p>Please enter your first name, last name, and birthday, <br>
+      GPT will guess your personality based on all your input!
+    </p>
+    <form id="myForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" placeholder="Enter your First Name">
+      <br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" placeholder="Enter your Last Name">
+      <br>
+      <label for="dob">Birthday:</label>
+      <input type="date" id="dob">
+      <br>
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <p>
+    <div id="result">
+      <!-- Thank you Grace Park! Your date of birth is 2002-12-11. -->
+    </div>
+    <br>
+    <div id="scope">
+      <!-- Given your date of birth, your horoscope is Sagittarius while your Zodic sign is Horse -->
+    </div>
+    <br>
+    <p></p>
+    <div id="gpt">
+
+    </div>
+    </p>
+  </div>
+
+  <script src="client.js" defer></script>
+</body>
+
+</html>

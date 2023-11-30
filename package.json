@@ -1,0 +1,21 @@
+{
+  "name": "dec4_webservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "develop": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Chang",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "horoscope": "^2.0.1",
+    "nodemon": "^3.0.1",
+    "openai": "^4.20.1"
+  }
+}
