@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function submitForm() {
+  // LOADING
+  document.getElementById('result').textContent = "Loading...";
+  // console.log(getRandomGif());
+  const signGifContainer = document.getElementById('signGif')
+  let tempGifURL = `/pusheenGif/${getRandomGif()}`
+  document.getElementById('signGif').src = tempGifURL;
+  // signGifContainer.textContent = ' Oh it will take some time to get your personal result! Enjoy a cut random sign gif!'
 
   const firstName = document.getElementById('firstName').value;
   const lastName = document.getElementById('lastName').value;
@@ -17,16 +24,6 @@ async function submitForm() {
     body: JSON.stringify({ firstName, lastName, dob })
   });
 
-  function myRepeatedFunction() {
-    console.log("GIF START");
-  }
-  let intervalId = setInterval(myRepeatedFunction, 100);
-  setTimeout(function () {
-    clearInterval(intervalId);
-    console.log("GIF STOPPED");
-  }, 5000);
-
-
   const resultContainer = document.getElementById('result')
   resultContainer.textContent = ''
 
@@ -40,47 +37,31 @@ async function submitForm() {
 
     let chosenSign = jsonData.sign;
 
+    let gifURL = `/signGif/${chosenSign}.gif`
+    // console.log(chosenSign);
+
     document.getElementById('result').textContent = message;
     document.getElementById('scope').textContent = additionalInfo;
     document.getElementById('gpt').textContent = gptResponse;
+    document.getElementById('signGif').src = gifURL;
     console.log("--HTML updated");
-
-    displayRandomTaroCard(chosenSign);
-
   } else {
     resultContainer.textContent = "Error in submitting data."
   }
 }
 
-const signApiKey = process.env.SIGNAPIKEY
+function getRandomGif() {
+  const Gifs = [
+    'pusheen_board.gif',
+    'pusheen_harry.gif',
+    'pusheen_leaf.gif',
+    'pusheen_pudding.gif',
+    'pusheen_zzz.gif',
+    'pusheen_walk.gif'
+  ];
 
-async function getRandomTarotCard(chosenSign) {
-  try {
-    const apiURL = 'https:api.pexels.com/v1/search'
-    const query = `?query=${chosenSign}&per_page=1&page=1`
-    const url = new URL(apiURL + query)
-
-    const response = await fetch(url, {
-      headers: {
-        Authorization: signApiKey
-      }
-    })
-
-    const data = await response.json();
-    if (response.ok) {
-      if (data.photos.length === 0) {
-        throw new Error('No photos found')
-      }
-      return data.photos[0].src.large
-    }
-  } catch (error) {
-    console.log(error.message);
-    return '';
-  }
+  const randomIndex = Math.floor(Math.random() * Gifs.length);
+  return Gifs[randomIndex];
 }
 
-async function displayRandomTaroCard(chosenSign) {
-  const imageURL = await getRandomTarotCard(chosenSign);
-  document.getElementById('tarotImage').src = imageURL;
-}
 

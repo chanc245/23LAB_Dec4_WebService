@@ -7,10 +7,10 @@
   border: 1px solid #0000007a;
   border-radius: 10px;
 
-  width: 50vw;
+  width: 60vw;
 
   margin: auto;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 button {
