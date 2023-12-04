@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -7,10 +8,9 @@ import { getSign, getZodiac } from 'horoscope';
 import OpenAI from 'openai';
 // https://www.npmjs.com/package/openai
 
-var cors = require('cors');
-app.use(cors());
-
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 const port = process.env.PORT || 3001
