@@ -7,6 +7,9 @@ import { getSign, getZodiac } from 'horoscope';
 import OpenAI from 'openai';
 // https://www.npmjs.com/package/openai
 
+var cors = require('cors');
+app.use(cors());
+
 const app = express();
 app.use(express.json());
 
